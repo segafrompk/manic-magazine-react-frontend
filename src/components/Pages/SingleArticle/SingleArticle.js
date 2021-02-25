@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../../apis/useFetch';
 import { apiAddress } from '../../../apis/ENV';
@@ -8,10 +8,6 @@ import ArticleSmall from '../Home/ArticleSmall';
 
 const SingleArticle = () => {
     const { articleId } = useParams();
-
-    useEffect(() => {
-        window.instgrm && window.instgrm.Embeds.process();
-    }, [articleId]);
 
     const {
         data: dataArticle,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Cover from '../Cover';
-import SocialShare from '../SocialShare';
+// import SocialShare from '../SocialShare';
 import TextDisplay from '../Home/TextDisplay';
 
 const ArticleBig = ({ articleData }) => {
@@ -13,10 +13,10 @@ const ArticleBig = ({ articleData }) => {
         category,
         title,
         slug,
+        contentTypes,
     } = articleData;
     const articleLink = `/posts/${slug}/${articleId}`;
-
-    const categoryLink = `/categories/${category.slug}`;
+    // const categoryLink = `/categories/${category.slug}`;
 
     // function limitWords(textToLimit, wordLimit) {
     //     var finalText = '';
@@ -39,27 +39,23 @@ const ArticleBig = ({ articleData }) => {
     return (
         <div className='big-article'>
             <Link to={articleLink}>
-                <Cover src={articleCover.url} alt={coverDescription} />
+                <Cover
+                    src={articleCover.url}
+                    alt={coverDescription}
+                    contentTypes={contentTypes}
+                />
 
                 <div className='big-article-padding'>
                     <div className='category-link'>
-                        <Link to={categoryLink}>
-                            {category.categoryName.toUpperCase()}
-                        </Link>
+                        {category.categoryName.toUpperCase()}
                     </div>
-                    <div className='article-title'>
-                        {/* <Link to={articleLink}> */}
-                        {title}
-                        {/* </Link> */}
-                    </div>
+                    <div className='article-title'>{title}</div>
                     <TextDisplay text={articleLead} />
                     <div className='big-article-bottom-row'>
-                        {/* <Link to={articleLink}> */}
                         <div className='button big-article-button'>
                             Read more!
                         </div>
-                        {/* </Link> */}
-                        <SocialShare link={articleLink} title={title} />
+                        {/* <SocialShare link={articleLink} title={title} /> */}
                     </div>
                 </div>
             </Link>

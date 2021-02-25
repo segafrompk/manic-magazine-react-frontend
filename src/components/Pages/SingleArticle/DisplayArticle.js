@@ -23,6 +23,7 @@ const DisplayArticle = ({ data }) => {
         tagsCollection,
         articleLink,
         categoryLink,
+        // contentTypes,
     } = data;
 
     let tagCollection;
