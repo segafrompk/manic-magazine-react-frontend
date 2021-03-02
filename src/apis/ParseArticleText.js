@@ -1,4 +1,4 @@
-import { apiAddress } from './ENV';
+import fixImageUrl from './FixImageUrl';
 
 const parseAllText = (text) => {
     if (text) {
@@ -7,12 +7,8 @@ const parseAllText = (text) => {
             return x;
         });
 
-        text = text.replace(/(<img)\s(.[^>])*>/, (x) => {
-            x = x.replace(/src="\/uploads\//, (y) =>
-                y.replace('src="', `src="${apiAddress}`)
-            );
-            return x;
-        });
+        text = fixImageUrl(text);
+
         return text;
     }
 };

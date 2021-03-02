@@ -114,8 +114,19 @@
         width: 2.1rem;
         height: auto;
     }
+    .single-article-padding .article-title {
+        font-size: 3rem;
+    }
     .category-link {
         margin-bottom: 0.3rem;
+        font-size: 1.5rem;
+        line-height: 1.1;
+    }
+    .credits {
+        font-size: 1.7rem;
+    }
+    .article-text {
+        font-size: 1.4rem;
     }
     .big-article:hover .big-article-padding {
         background-color: rgb(255, 255, 255);
@@ -143,7 +154,7 @@
         margin-top: 0px;
     }
     .article-title {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
     }
     .small-article-padding .article-text, .big-article-padding .article-text {
         display: none;
@@ -155,6 +166,12 @@
         position: relative;
         left: 0 !important;
         bottom: unset;
+    }
+    .single-article-bottom-row {
+        line-height: 3;
+    }
+    .button.single-article-button {
+        font-size: 1.6rem;
     }
     .content-type span {
         margin-right: 0.2rem;

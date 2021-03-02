@@ -23,7 +23,7 @@ const DisplayArticle = ({ data }) => {
         tagsCollection,
         articleLink,
         categoryLink,
-        // contentTypes,
+        galleries,
     } = data;
 
     let tagCollection;
@@ -106,7 +106,7 @@ const DisplayArticle = ({ data }) => {
                         }
                     </div>
                 )}
-                <TextDisplay text={articleBody} />
+                <TextDisplay text={articleBody} galleries={galleries} />
                 <div className='single-article-bottom-row'>
                     <div className='single-article-bottom-row-links'>
                         <div>

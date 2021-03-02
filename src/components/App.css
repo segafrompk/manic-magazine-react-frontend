@@ -305,6 +305,11 @@ button {
     font-size: 0.9rem;
 }
 
+.gallery-error {
+    font-size: 2rem;
+    color: red;
+}
+
 /* CSS specific to big article card view */
 
 .big-article:hover a, .big-article:hover div {
@@ -541,8 +546,8 @@ button {
     background-color: var(--manic-orange);
 }
 
-.single-article-bottom-row-links>div>a {
-    margin-left: 2px;
+.single-article-bottom-row-links>div>div, .single-article-bottom-row-links>div>a:not(:last-child) {
+    margin-right: 4px;
 }
 
 .single-article-bottom-row-links>div>a>div {
