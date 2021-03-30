@@ -13,7 +13,7 @@ const Category = () => {
         error: errorPosts,
     } = useFetch(`${apiAddress}/tags/${tag}`);
     return (
-        <>
+        <div className='category-body'>
             {dataPosts && dataPosts.length !== 0 && (
                 <>
                     <ArticleBig articleData={dataPosts[0]} />
@@ -35,7 +35,7 @@ const Category = () => {
             )}
             {pendingPosts && <div>Loading...</div>}
             {errorPosts && <div>{errorPosts}</div>}
-        </>
+        </div>
     );
 };
 

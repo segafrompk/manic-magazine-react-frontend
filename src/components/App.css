@@ -32,6 +32,12 @@ button {
     color: white;
 }
 
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 /* CSS specific to header */
 
 .logo-top-corner {
@@ -153,10 +159,27 @@ button {
 
 /* Settings for body and categories view */
 
+.category-body {
+    flex: auto;
+}
+
+.loading-container {
+    display: inline-flex;
+}
+
+.loading-animation {
+    height: 100px;
+    width: 100px;
+}
+
 .body {
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .article-grid {
@@ -165,6 +188,13 @@ button {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     column-gap: 15px;
     row-gap: 50px;
+}
+
+.article-grid .big-article {
+    grid-column: span 2;
+}
+
+.single-article .article-grid {
     margin-bottom: 60px;
 }
 
@@ -479,22 +509,37 @@ button {
 /* CSS specific to single article view */
 
 .button.single-article-button {
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem calc(0.5rem - 1px) 0.5rem;
     font-size: 1rem;
     display: inline-flex;
     line-height: 1;
 }
+
+.button.single-article-button.category-link-button {
+    background-color: var(--manic-orange);
+    font-size: 1.1rem;
+    padding-bottom: calc(0.5rem - 3px);
+}
+
+/* .single-article-padding .category-link {
+    background-color: var(--manic-orange);
+}
+
+.single-article-padding .category-link a {
+    color: white;
+} */
 
 .single-article-padding {
     padding: 15px 0px;
 }
 
 .single-article-padding .article-title {
-    font-family: 'Bebas Neue Book';
-    font-size: 4rem;
+    font-family: 'Bebas Neue';
+    font-size: 3.5rem;
     line-height: 1;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    /* margin-top: 15px;
+    margin-bottom: 10px; */
+    margin: 10px 0;
 }
 
 .author-link {
@@ -524,12 +569,23 @@ button {
 }
 
 .single-article-padding .article-text figure img {
-    max-width: var(--body-width);
+    width: 100%;
 }
 
 .raw-html-embed {
     display: flex;
     justify-content: center;
+}
+
+.raw-html-embed iframe[src*="youtube"] {
+    width: 100%;
+    height: calc(var(--body-width) * 0.60);
+    margin-bottom: 10px;
+}
+
+.raw-html-embed iframe:not([src*="youtube"]) {
+    display: block;
+    margin: 0 auto 10px auto;
 }
 
 .single-article .social-share {

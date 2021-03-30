@@ -9,13 +9,15 @@ const Menu = () => {
             <MenuItem route='/categories/movies' title='MOVIES' />
             <MenuItem route='/categories/girls' title='GIRLS' />
             <MenuItem route='/categories/style-planner' title='STYLE PLANNER' />
-            <MenuItem route='/categories/cars' title='CARS' />
-            <MenuItem route='/categories/sports' title='SPORTS' />
-            <MenuItem route='/categories/history' title='HISTORY' />
-            <MenuItem route='/categories/culture' title='CULTURE' />
-            <MenuItem route='/categories/art' title='ART' />
+            <MenuItem route='/categories/gear' title='GEAR' />
+            <MenuItem route='/categories/fitness' title='FITNESS' />
+            <MenuItem
+                route='/categories/culture-and-art'
+                title='CULTURE & ART'
+            />
+            <MenuItem route='/categories/travel' title='TRAVEL' />
             <MenuItem route='/categories/lifestyle' title='LIFESTYLE' />
-            <MenuItem route='/categories/news' title='NEWS' />
+            <MenuItem route='/categories/grooming' title='GROOMING' />
             <MenuItem
                 route='/subscribe'
                 title='SUBSCRIBE'

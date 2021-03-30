@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { fullUrl } from '../../../apis/urlHandler';
+// import { fullUrl } from '../../../apis/urlHandler';
 import Cover from '../Cover';
-import SocialShare from '../SocialShare';
+// import SocialShare from '../SocialShare';
 import TextDisplay from '../Home/TextDisplay';
 import {
     facebookScript,
@@ -21,7 +21,7 @@ const DisplayArticle = ({ data }) => {
         textAuthor,
         title,
         tagsCollection,
-        articleLink,
+        // articleLink,
         categoryLink,
         galleries,
     } = data;
@@ -74,34 +74,29 @@ const DisplayArticle = ({ data }) => {
         <div className='single-article'>
             <Cover src={articleCover.url} alt={coverDescription} />
             <div className='single-article-padding'>
-                <div className='category-link highlight'>
-                    <Link to={categoryLink}>
+                <Link to={categoryLink}>
+                    <div className='button single-article-button category-link-button'>
                         {category.categoryName.toUpperCase()}
-                    </Link>
-                </div>
+                    </div>
+                </Link>
+
                 <div className='article-title'>{title}</div>
-                {photoAuthor.length !== 0 && (
+                {photoAuthor && photoAuthor.length !== 0 && (
                     <div className='credits'>
                         PHOTOS BY:
                         {
                             <span className='author-link highlight'>
-                                {' ' +
-                                    photoAuthor
-                                        .map((author) => author.authorName)
-                                        .join(', ')}
+                                {' ' + photoAuthor}
                             </span>
                         }
                     </div>
                 )}
-                {textAuthor.length !== 0 && (
+                {textAuthor && textAuthor.length !== 0 && (
                     <div className='credits'>
                         WRITTEN BY:
                         {
                             <span className='author-link highlight'>
-                                {' ' +
-                                    textAuthor
-                                        .map((author) => author.authorName)
-                                        .join(', ')}
+                                {' ' + textAuthor}
                             </span>
                         }
                     </div>
@@ -126,7 +121,7 @@ const DisplayArticle = ({ data }) => {
                             {tagCollection && tagCollection}
                         </div>
                     </div>
-                    <SocialShare link={fullUrl(articleLink)} title={title} />
+                    {/* <SocialShare link={fullUrl(articleLink)} title={title} /> */}
                 </div>
             </div>
         </div>

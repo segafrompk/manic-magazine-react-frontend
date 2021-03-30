@@ -1,10 +1,13 @@
 import useFetch from '../../../apis/useFetch';
 import { apiAddress } from '../../../apis/ENV';
+import Loading from '../Loading';
 
 // import Helmet from 'react-helmet';
 import HomeArticles from './HomeArticles';
 
 const Home = () => {
+    //TODO Add loading animation to all components!!!
+
     const {
         data: homePage,
         isPending: pendingHomePage,
@@ -13,8 +16,8 @@ const Home = () => {
 
     return (
         <>
-            {pendingHomePage && <div>Loading...</div>}
-            {homePage && <HomeArticles data={homePage} />}
+            {pendingHomePage && <Loading />}
+            {homePage && !pendingHomePage && <HomeArticles data={homePage} />}
             {errorHomePage && <div>{errorHomePage}</div>}
         </>
     );

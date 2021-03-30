@@ -4,6 +4,7 @@ import useFetch from '../../../apis/useFetch';
 import { apiAddress } from '../../../apis/ENV';
 import ArticleSmall from '../Home/ArticleSmall';
 import ArticleBig from '../Home/ArticleBig';
+import Loading from '../Loading';
 
 const Category = () => {
     const { categoryName } = useParams();
@@ -14,8 +15,8 @@ const Category = () => {
     } = useFetch(`${apiAddress}/categories/${categoryName}`);
     return (
         <>
-            {dataPosts && dataPosts.length !== 0 && (
-                <>
+            {dataPosts && dataPosts.length !== 0 && !pendingPosts && (
+                <div className='category-body'>
                     <ArticleBig articleData={dataPosts[0]} />
                     <div className='article-grid'>
                         {dataPosts.map((post, index) => {
@@ -31,9 +32,9 @@ const Category = () => {
                             }
                         })}
                     </div>
-                </>
+                </div>
             )}
-            {pendingPosts && <div>Loading...</div>}
+            {pendingPosts && <Loading />}
             {errorPosts && <div>{errorPosts}</div>}
         </>
     );

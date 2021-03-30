@@ -4,9 +4,11 @@ const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+    // const [currentUrl, setCurrentUrl] = useState(null);
 
     useEffect(() => {
         const abortCtrl = new AbortController();
+        setIsPending(true);
 
         fetch(url, { signal: abortCtrl.signal })
             .then((res) => {

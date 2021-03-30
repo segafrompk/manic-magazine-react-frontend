@@ -5,6 +5,7 @@ import { apiAddress } from '../../../apis/ENV';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import DisplayArticle from './DisplayArticle';
 import ArticleSmall from '../Home/ArticleSmall';
+import Loading from '../Loading';
 
 const SingleArticle = () => {
     const { articleId } = useParams();
@@ -34,10 +35,10 @@ const SingleArticle = () => {
 
     return (
         <React.Fragment>
-            {pendingArticle && <div>Loading...</div>}
+            {pendingArticle && <Loading />}
             {errorArticle && <div>{errorArticle}</div>}
-            {dataArticle && (
-                <section>
+            {dataArticle && !pendingArticle && (
+                <section className='single-article-section'>
                     <DisplayArticle data={dataArticle} />
 
                     <div className='article-grid'>
