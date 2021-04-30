@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
 const useFetch = (url) => {
-    const [data, setData] = useState(null);
-    const [isPending, setIsPending] = useState(true);
-    const [error, setError] = useState(null);
-    // const [currentUrl, setCurrentUrl] = useState(null);
+    const [data, setData] = useState({
+        data: null,
+        isPending: true,
+        error: null,
+    });
 
     useEffect(() => {
         const abortCtrl = new AbortController();
-        setIsPending(true);
-
+        setData({ data: null, isPending: true, error: null });
         fetch(url, { signal: abortCtrl.signal })
             .then((res) => {
                 if (!res.ok) {
@@ -18,22 +18,22 @@ const useFetch = (url) => {
                 return res.json();
             })
             .then((data) => {
-                setData(data);
-                setIsPending(false);
-                setError(null);
+                setData({ data: data, isPending: false, error: null });
             })
             .catch((err) => {
                 if (err.name === 'AbortError') {
                     console.log('Fetch aborted');
                 } else {
-                    setIsPending(false);
-                    setError(err.message);
+                    setData({
+                        data: null,
+                        isPending: false,
+                        error: err.message,
+                    });
                 }
             });
         return () => abortCtrl.abort();
     }, [url]);
-
-    return { data, isPending, error };
+    return { data: data.data, isPending: data.isPending, error: data.error };
 };
 
 export default useFetch;

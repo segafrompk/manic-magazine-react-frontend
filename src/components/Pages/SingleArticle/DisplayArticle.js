@@ -38,7 +38,6 @@ const DisplayArticle = ({ data }) => {
             );
         });
     }
-
     const embedSocialScripts = () => {
         const fb = document.querySelector('div.raw-html-embed div.fb-post');
         const twitter = document.querySelector('blockquote.twitter-tweet');

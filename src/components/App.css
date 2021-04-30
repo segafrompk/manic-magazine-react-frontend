@@ -161,6 +161,8 @@ button {
 
 .category-body {
     flex: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .loading-container {
@@ -610,6 +612,44 @@ button {
     background-color: #555;
 }
 
+.pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.pagination a, .pagination span {
+    padding: 0.5rem 0.8rem calc(0.5rem - 1px) 0.8rem;
+    font-size: 1.1rem;
+    display: inline-flex;
+    line-height: 1;
+    background-color: #555;
+    color: white;
+    margin-top: 30px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.pagination a:hover {
+    text-decoration: none;
+    filter: brightness(1.2);
+}
+
+.pagination :not(:last-child) {
+    margin-right: 10px;
+}
+
+.pagination .pagination-current {
+    background-color: var(--manic-orange);
+}
+
 /* Footer */
 
 .footer-menu {
@@ -635,6 +675,79 @@ button {
     font-size: 0.8rem;
     padding: 5px 0px;
     text-align: center;
+}
+
+.manic-subscribe {
+    display: flex;
+    flex: auto;
+    background: url('../subscribe-background.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.manic-subscribe-dark-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.subscribe-box {
+    height: 400px;
+    width: 500px;
+    border: 1px solid var(--manic-orange);
+    padding: 40px 40px;
+}
+
+.subscribe-box-title {
+    text-align: center;
+    color: var(--manic-orange);
+    font-family: 'Bebas Neue Regular';
+    font-size: 6.4rem;
+    line-height: 0.9;
+}
+
+.subscribe-box-text {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    color: #666;
+    font-family: 'Bebas Neue Regular';
+    font-size: 2.05rem;
+    line-height: 1;
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: 20px;
+}
+
+.subscribe-box-form {
+    display: flex;
+    height: 40px;
+}
+
+.subscribe-box-button {
+    flex: 1.2;
+    margin-right: 5px;
+    border: none;
+    background-color: var(--manic-orange);
+    font-size: 1.2rem;
+    line-height: 0.8;
+}
+
+.subscribe-box-input {
+    flex: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--manic-orange);
+    padding: 0 15px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition-duration: 200ms;
+}
+
+.subscribe-box-input:focus {
+    background-color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    border-radius: 8px;
 }
 
 /* RESPONSIVE CSS START */

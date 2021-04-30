@@ -7,7 +7,8 @@ const HomeArticles = ({ data }) => {
         for (const key in objectToFilter) {
             if (
                 objectToFilter.hasOwnProperty(key) &&
-                typeof objectToFilter[key] === 'object'
+                typeof objectToFilter[key] === 'object' &&
+                objectToFilter[key] !== null
             ) {
                 dataObject[key] = objectToFilter[key];
             }

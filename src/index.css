@@ -32,3 +32,8 @@
     font-family: 'Bebas Neue Book';
     src: url(./fonts/BebasNeue-Book.otf), url(./fonts/BebasNeue-Book.ttf);
 }
+
+@font-face {
+    font-family: 'Bebas Neue Regular';
+    src: url(./fonts/BebasNeue-Regular.otf), url(./fonts/BebasNeue-Regular.ttf);
+}
