@@ -1,7 +1,7 @@
 import parseArticleText from '../../../apis/ParseArticleText';
 import parse from 'html-react-parser';
 import ImageGallery from 'react-image-gallery';
-import { apiAddress } from '../../../apis/ENV';
+import { apiAddress } from '../../../apis/.env';
 import './ImageGallery.css';
 
 const fixImageUrl = (x) => {

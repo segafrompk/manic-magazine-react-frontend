@@ -1,4 +1,4 @@
-import { apiAddress } from './ENV';
+import { apiAddress } from './.env';
 
 const fixImageUrl = (url) => {
     url = url.replace(/(<img)\s(.[^>])*>/, (x) => {

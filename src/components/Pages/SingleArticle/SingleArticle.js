@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../../apis/useFetch';
-import { apiAddress } from '../../../apis/ENV';
+import { apiAddress } from '../../../apis/.env';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import DisplayArticle from './DisplayArticle';
 import ArticleSmall from '../Home/ArticleSmall';

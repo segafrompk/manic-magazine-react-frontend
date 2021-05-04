@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Menu from './Menu';
 import Search from './Search';
-import manic from '../../images/logo-glavni.png';
-import logo from '../../images/logo-sajt-gornji-levi-ugao.svg';
+import manic from '../../images/logo-main.png';
+import logo from '../../images/logo-upper-left.svg';
 
 const Header = () => {
     const [searchActive, setSearchActive] = useState(false);

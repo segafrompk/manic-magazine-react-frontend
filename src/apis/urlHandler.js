@@ -1,4 +1,4 @@
-import { apiAddress, siteAddress } from './ENV';
+import { apiAddress, siteAddress } from './.env';
 
 const isExternal = new RegExp('^(https?:\\/\\/)');
 
